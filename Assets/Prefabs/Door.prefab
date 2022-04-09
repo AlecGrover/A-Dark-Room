@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2795730891853598356}
   - component: {fileID: 3404784369483302016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713079284548793042}
-  m_LocalRotation: {x: 0, y: -0.00000008742278, z: 0, w: -1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46,12 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorEnabled: 1
   Open: 0
+  Locked: 0
+  ColliderWidth: 10
+  ColliderHeight: 20
+  ColliderOffset: {x: 0, y: 10, z: 0}
+  ColliderSize: {x: 10, y: 20, z: 5}
   Rooms:
   - {fileID: 0}
   - {fileID: 0}
-  OpeningDirection: 3
+  OpeningDirection: 0
   LocationOffset: {x: -4, y: 30, z: -1}
-  BaseRotation: 90
+  BaseRotation: 0
   OpenAngle: 120
   DoorGameObject: {fileID: 520928853367142000}
 --- !u!1001 &863529880401087265
@@ -79,7 +84,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc89b7b49ef8b5a44af313e7171bc075, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.0000057
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc89b7b49ef8b5a44af313e7171bc075, type: 3}
       propertyPath: m_LocalPosition.y
@@ -99,11 +104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc89b7b49ef8b5a44af313e7171bc075, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc89b7b49ef8b5a44af313e7171bc075, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bc89b7b49ef8b5a44af313e7171bc075, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

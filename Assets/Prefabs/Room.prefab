@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriggerUpdate: 0
   NorthWall:
     wall: {fileID: 1990621486520196057}
     door: {fileID: 0}
@@ -74,7 +75,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5072765742792156588, guid: 7cf4b7f584d7e6c4593a21e7bc5cb566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5561317978061274902, guid: 7cf4b7f584d7e6c4593a21e7bc5cb566, type: 3}
       propertyPath: m_IsActive
@@ -86,7 +87,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7622280941865731097, guid: 7cf4b7f584d7e6c4593a21e7bc5cb566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7948133561320890990, guid: 7cf4b7f584d7e6c4593a21e7bc5cb566, type: 3}
       propertyPath: m_RootOrder

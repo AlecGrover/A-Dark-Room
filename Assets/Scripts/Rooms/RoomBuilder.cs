@@ -25,6 +25,8 @@ public struct WallSystem
 public class RoomBuilder : MonoBehaviour
 {
 
+    public bool TriggerUpdate = false;
+
     public WallSystem NorthWall;
     public WallSystem SouthWall;
     public WallSystem EastWall;
@@ -47,7 +49,7 @@ public class RoomBuilder : MonoBehaviour
         EastWall.SetHasDoor();
         WestWall.SetHasDoor();
 
-        gameObject.transform.position = ElementWiseMultiplication.Multiply(RoomLocation, RoomScale);
+        gameObject.transform.position = Vector3MathExtension.Multiply(RoomLocation, RoomScale);
     }
 
 
@@ -57,16 +59,22 @@ public class RoomBuilder : MonoBehaviour
         {
             case Direction.North:
                 NorthWall.HasDoor = doorEnabled;
+                NorthWall.SetHasDoor();
                 break;
             case Direction.South:
                 SouthWall.HasDoor = doorEnabled;
+                SouthWall.SetHasDoor();
                 break;
             case Direction.West:
                 WestWall.HasDoor = doorEnabled;
+                WestWall.SetHasDoor();
                 break;
             case Direction.East:
                 EastWall.HasDoor = doorEnabled;
+                EastWall.SetHasDoor();
                 break;
         }
+
+        TriggerUpdate = !TriggerUpdate;
     }
 }

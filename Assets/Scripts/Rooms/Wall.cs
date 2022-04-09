@@ -79,6 +79,8 @@ public class Wall : MonoBehaviour
     public void SetHasDoor(bool hasDoor)
     {
         HasDoor = hasDoor;
+        // if (BlankWallGameObject) BlankWallGameObject.SetActive(!HasDoor);
+        // if (DoorWallGameObject) DoorWallGameObject.SetActive(HasDoor);
     }
 
 }
