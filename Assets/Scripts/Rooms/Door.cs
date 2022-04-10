@@ -148,4 +148,11 @@ public class Door : MonoBehaviour
 
         return nextRoom;
     }
+
+    public void Unlock()
+    {
+        Locked = false;
+    }
+
+
 }
