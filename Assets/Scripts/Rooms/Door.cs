@@ -37,20 +37,30 @@ public class Door : MonoBehaviour
     void OnValidate()
     {
         if (Rooms.Count < 2) return;
+
+        if (Rooms[0]) transform.name = string.Format("{0} [{1}]", Rooms[0].transform.name, OpeningDirection.ToString());
+
         float adjustedAngle = Open ? BaseRotation + OpenAngle : BaseRotation;
         switch (OpeningDirection)
         {
             case Direction.East:
                 _doorLocalBaseRotation = 90f;
+                BaseRotation = -270f;
+                LocationOffset = new Vector3(-1, 30, 4);
                 break;
             case Direction.West:
                 _doorLocalBaseRotation = 270f;
+                BaseRotation = -90f;
+                LocationOffset = new Vector3(1, 30, -4);
                 break;
             case Direction.South:
                 _doorLocalBaseRotation = 180f;
+                BaseRotation = -180f;
+                LocationOffset = new Vector3(4, 30, 1);
                 break;
             case Direction.North:
                 _doorLocalBaseRotation = 0f;
+                LocationOffset = new Vector3(-4, 30, -1);
                 break;
         }
 
@@ -115,6 +125,7 @@ public class Door : MonoBehaviour
             Player player = FindObjectOfType<Player>();
             if (player && DoorGameObject)
             {
+                Debug.Log("Player Forward: " + (DoorGameObject.transform.position - player.transform.position).ToString());
                 player.MoveToRoom(GetRoomInDirection(DoorGameObject.transform.position - player.transform.position));
             }
         }
@@ -135,7 +146,8 @@ public class Door : MonoBehaviour
     {
         if (Rooms.Count < 2 || !Rooms[0] || !Rooms[1]) return null;
 
-        float directionOfExitRoom = Vector3.Dot(Rooms[1].transform.position - transform.position, transformForward);
+        float directionOfExitRoom = Vector3.Dot(Rooms[1].transform.position - transform.GetChild(0).position, transformForward);
+        Debug.Log("Parallelism of Exit Room: " + directionOfExitRoom);
         RoomBuilder nextRoom;
         if (directionOfExitRoom > 0)
         {

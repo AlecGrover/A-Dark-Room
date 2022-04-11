@@ -39,6 +39,7 @@ public class Cursor : MonoBehaviour
     void Update()
     {
         // Hides the cursor when the mouse is in frame
+        if (!Camera.current) return;
         var mouseLocation = Camera.current.ScreenToViewportPoint(Input.mousePosition);
         var outOfFrame = Mathf.Min(mouseLocation.x, mouseLocation.y) < 0 ||
                          Mathf.Max(mouseLocation.x, mouseLocation.y) > 1;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,31 @@ public enum Direction
     West
 }
 
+[Serializable]
+public enum WallType
+{
+    Plain,
+    Cobblestone,
+    Ornate,
+    StoneBrick
+}
+
+[Serializable]
+public struct WallTypeModel
+{
+    public WallType TWallType;
+    public GameObject EmptyWallObject;
+    public GameObject DoorWallObject;
+
+    public void SetWallObjectsActive(bool active)
+    {
+        if (EmptyWallObject) EmptyWallObject.SetActive(active);
+        if (DoorWallObject) DoorWallObject.SetActive(active);
+    }
+
+}
+
+
 [ExecuteInEditMode]
 public class Wall : MonoBehaviour
 {
@@ -24,6 +50,9 @@ public class Wall : MonoBehaviour
 
     public GameObject DoorWallGameObject = null;
     public GameObject BlankWallGameObject = null;
+
+    public List<WallTypeModel> WallTypes = new List<WallTypeModel>(4);
+    public WallType ThisWallType = WallType.Plain;
 
     public bool HasDoor = false;
 
@@ -51,6 +80,13 @@ public class Wall : MonoBehaviour
     {
         if (BlankWallGameObject) BlankWallGameObject.SetActive(!HasDoor);
         if (DoorWallGameObject) DoorWallGameObject.SetActive(HasDoor);
+
+        foreach (var wallType in WallTypes)
+        {
+            if (wallType.TWallType != ThisWallType) wallType.SetWallObjectsActive(false);
+        }
+        var activeWallType = WallTypes.FirstOrDefault(wallType => wallType.TWallType == ThisWallType);
+        activeWallType.SetWallObjectsActive(true);
     }
 
     private void PositionWallGameObjects(GameObject wallGameObject)
@@ -81,6 +117,11 @@ public class Wall : MonoBehaviour
         HasDoor = hasDoor;
         // if (BlankWallGameObject) BlankWallGameObject.SetActive(!HasDoor);
         // if (DoorWallGameObject) DoorWallGameObject.SetActive(HasDoor);
+    }
+
+    public void SetWallType(WallType wallType)
+    {
+        ThisWallType = wallType;
     }
 
 }
