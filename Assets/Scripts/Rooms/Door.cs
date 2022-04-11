@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
     public bool DoorEnabled = false;
     public bool Open = false;
     public bool Locked = false;
+    public Lock DoorLock;
+    public bool HideDoorModel = false;
 
     [Header("Collider Parameters")]
     private BoxCollider _collider;
@@ -20,6 +22,7 @@ public class Door : MonoBehaviour
     public float ColliderHeight = 10;
     public Vector3 ColliderOffset = Vector3.zero;
     public Vector3 ColliderSize = Vector3.one;
+    public bool ColliderValuesOverride = false;
 
     [Header("Door Transform Parameters")]
     [Tooltip("The first room is always the room that must be exited, i.e. the room the door opens from")]
@@ -85,7 +88,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled);
+        if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled && !HideDoorModel);
         if (_collider) _collider.enabled = DoorEnabled;
         if (Rooms.Count < 2) return;
         if (Rooms[0]) Rooms[0].SetDoor(OpeningDirection, DoorEnabled);
@@ -94,9 +97,12 @@ public class Door : MonoBehaviour
         {
             DoorGameObject.transform.position = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + LocationOffset;
             if (!_collider) _collider = GetComponent<BoxCollider>();
-            var rawColliderCenter = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + ColliderOffset;
-            _collider.center = Vector3MathExtension.Rotate3DPointAroundYAxis(rawColliderCenter, Mathf.Deg2Rad * transform.rotation.y);
-            _collider.size = Vector3MathExtension.Abs(Vector3MathExtension.Rotate3DPointAroundYAxis(ColliderSize, Mathf.Deg2Rad * BaseRotation));
+            if (!ColliderValuesOverride)
+            {
+                var rawColliderCenter = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + ColliderOffset;
+                _collider.center = Vector3MathExtension.Rotate3DPointAroundYAxis(rawColliderCenter, Mathf.Deg2Rad * transform.rotation.y);
+                _collider.size = Vector3MathExtension.Abs(Vector3MathExtension.Rotate3DPointAroundYAxis(ColliderSize, Mathf.Deg2Rad * BaseRotation));
+            }
         }
     }
 
@@ -133,6 +139,18 @@ public class Door : MonoBehaviour
         else
         {
             if (!Locked) Open = true;
+            else
+            {
+                Player player = FindObjectOfType<Player>();
+                if (player && DoorLock)
+                {
+                    foreach (var item in player.GetInventoryItems())
+                    {
+                        if (item && DoorLock.TryUseItem(item)) player.ConsumeItem(item);
+                        if (!Locked) break;
+                    }
+                }
+            }
             if (DoorGameObject)
             {
                 DoorGameObject.transform.localRotation =

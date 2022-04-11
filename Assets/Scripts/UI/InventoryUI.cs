@@ -23,6 +23,7 @@ public class InventoryUI : MonoBehaviour
             var inventorySlot = _player.TryGetSlot(i);
             if (inventorySlot.HeldItem != null && !inventorySlot.InPlayerHands)
             {
+                if (InventorySlots[i].SlotImage.sprite == inventorySlot.HeldItem.InventorySprite) continue;
                 Debug.Log("Setting sprite");
                 InventorySlots[i].SlotImage.sprite = inventorySlot.HeldItem.InventorySprite;
             }

@@ -82,6 +82,9 @@ MonoBehaviour:
   WallDirection: 0
   DoorWallGameObject: {fileID: 8563122768630460176}
   BlankWallGameObject: {fileID: 3145110217711719663}
+  DoorWallOverride: {fileID: 0}
+  BlankWallOverride: {fileID: 0}
+  WallOverride: 0
   WallTypes:
   - TWallType: 0
     EmptyWallObject: {fileID: 3759046476380677838}

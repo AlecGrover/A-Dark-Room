@@ -102,4 +102,22 @@ public class Player : MonoBehaviour
     {
         return (from inventoryItem in _inventorySlots where inventoryItem.InPlayerHands select inventoryItem.HeldItem.InventorySprite).FirstOrDefault();
     }
+
+    public List<Item> GetInventoryItems()
+    {
+        List<Item> returnList = new List<Item>();
+        foreach (var inventorySlot in _inventorySlots) returnList.Add(inventorySlot.HeldItem);
+        return returnList;
+    }
+
+    public void ConsumeItem(Item item)
+    {
+        if (_inventorySlots.Exists(inventorySlot => inventorySlot.HeldItem == item))
+        {
+            var slotToRemove = _inventorySlots.First(invSlot => invSlot.HeldItem == item);
+            slotToRemove.HeldItem = null;
+            slotToRemove.InPlayerHands = false;
+        }
+    }
+
 }

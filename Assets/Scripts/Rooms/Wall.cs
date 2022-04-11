@@ -51,6 +51,10 @@ public class Wall : MonoBehaviour
     public GameObject DoorWallGameObject = null;
     public GameObject BlankWallGameObject = null;
 
+    public GameObject DoorWallOverride = null;
+    public GameObject BlankWallOverride = null;
+    public bool WallOverride = false;
+
     public List<WallTypeModel> WallTypes = new List<WallTypeModel>(4);
     public WallType ThisWallType = WallType.Plain;
 
@@ -81,12 +85,24 @@ public class Wall : MonoBehaviour
         if (BlankWallGameObject) BlankWallGameObject.SetActive(!HasDoor);
         if (DoorWallGameObject) DoorWallGameObject.SetActive(HasDoor);
 
-        foreach (var wallType in WallTypes)
+        if (!WallOverride)
         {
-            if (wallType.TWallType != ThisWallType) wallType.SetWallObjectsActive(false);
+            if (DoorWallOverride) DoorWallOverride.SetActive(false);
+            if (BlankWallOverride) BlankWallOverride.SetActive(false);
+            foreach (var wallType in WallTypes)
+            {
+                if (wallType.TWallType != ThisWallType) wallType.SetWallObjectsActive(false);
+            }
+            var activeWallType = WallTypes.FirstOrDefault(wallType => wallType.TWallType == ThisWallType);
+            activeWallType.SetWallObjectsActive(true);
         }
-        var activeWallType = WallTypes.FirstOrDefault(wallType => wallType.TWallType == ThisWallType);
-        activeWallType.SetWallObjectsActive(true);
+        else
+        {
+            DoorWallOverride.SetActive(HasDoor);
+            BlankWallOverride.SetActive(!HasDoor);
+            foreach (var wallType in WallTypes) wallType.SetWallObjectsActive(false);
+        }
+
     }
 
     private void PositionWallGameObjects(GameObject wallGameObject)

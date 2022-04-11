@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
 
     public Sprite InventorySprite;
+    public float ID = 0x0;
 
 
     // Start is called before the first frame update
