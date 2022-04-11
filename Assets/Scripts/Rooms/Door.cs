@@ -86,6 +86,7 @@ public class Door : MonoBehaviour
     void Update()
     {
         if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled);
+        if (_collider) _collider.enabled = DoorEnabled;
         if (Rooms.Count < 2) return;
         if (Rooms[0]) Rooms[0].SetDoor(OpeningDirection, DoorEnabled);
         if (Rooms[1]) Rooms[1].SetDoor(GetOpposingDirection(), DoorEnabled);
