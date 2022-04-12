@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Rooms;
 using UnityEngine;
 
 [RequireComponent(typeof(Player))]
@@ -26,16 +27,21 @@ public class PlayerInteractSystem : MonoBehaviour
             // Debug.Log("Detected player interact attempt");
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            bool hitVolume = Physics.Raycast(ray, out hit, 36f, InteractLayerMask);
+            bool hitVolume = Physics.Raycast(ray, out hit, 42f, InteractLayerMask);
             if (hitVolume)
             {
                 // Debug.Log("Detected interactable object");
                 Debug.Log(hit.transform.name);
+                Lock lockComponent = hit.transform.gameObject.GetComponent<Lock>();
                 Door door = hit.transform.gameObject.GetComponent<Door>();
                 if (door)
                 {
                     door.AttemptOpen();
                     return;
+                }
+                else if (lockComponent)
+                {
+                    lockComponent.TryUnlock();
                 }
 
                 Item item = hit.transform.gameObject.GetComponent<Item>();

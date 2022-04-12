@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Math;
+using Assets.Scripts.Rooms;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -17,7 +18,7 @@ public class Door : MonoBehaviour
     public bool HideDoorModel = false;
 
     [Header("Collider Parameters")]
-    private BoxCollider _collider;
+    protected BoxCollider _collider;
     public float ColliderWidth = 4;
     public float ColliderHeight = 10;
     public Vector3 ColliderOffset = Vector3.zero;
@@ -36,12 +37,20 @@ public class Door : MonoBehaviour
     [Header("Door Mesh")]
     public GameObject DoorGameObject;
 
+    [Header("Sound FX Parameters")]
+    public AudioClip OpeningSound;
+    public OneShotPlayer SoundSource;
+
 
     void OnValidate()
     {
         if (Rooms.Count < 2) return;
 
-        if (Rooms[0]) transform.name = string.Format("{0} [{1}]", Rooms[0].transform.name, OpeningDirection.ToString());
+        if (Rooms[0])
+        {
+            transform.name = string.Format("{0} [{1}]", Rooms[0].transform.name, OpeningDirection.ToString());
+            SoundSource = Rooms[0].GetComponent<OneShotPlayer>();
+        }
 
         float adjustedAngle = Open ? BaseRotation + OpenAngle : BaseRotation;
         switch (OpeningDirection)
@@ -86,7 +95,7 @@ public class Door : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled && !HideDoorModel);
         if (_collider) _collider.enabled = DoorEnabled;
@@ -138,18 +147,14 @@ public class Door : MonoBehaviour
         }
         else
         {
-            if (!Locked) Open = true;
+            if (!Locked)
+            {
+                Open = true;
+                if (SoundSource && OpeningSound) SoundSource.PlayOneShot(OpeningSound);
+            }
             else
             {
-                Player player = FindObjectOfType<Player>();
-                if (player && DoorLock)
-                {
-                    foreach (var item in player.GetInventoryItems())
-                    {
-                        if (item && DoorLock.TryUseItem(item)) player.ConsumeItem(item);
-                        if (!Locked) break;
-                    }
-                }
+                if (DoorLock) DoorLock.TryUnlock();
             }
             if (DoorGameObject)
             {
@@ -180,7 +185,7 @@ public class Door : MonoBehaviour
         return nextRoom;
     }
 
-    public void Unlock()
+    public virtual void Unlock()
     {
         Locked = false;
     }
