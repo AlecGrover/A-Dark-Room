@@ -5,7 +5,7 @@ using Assets.Scripts.Math;
 using Assets.Scripts.Rooms;
 using UnityEngine;
 
-[ExecuteInEditMode]
+// [ExecuteInEditMode]
 [RequireComponent(typeof(BoxCollider))]
 public class Door : MonoBehaviour
 {
@@ -52,13 +52,57 @@ public class Door : MonoBehaviour
 
     void OnValidate()
     {
-        if (Rooms.Count < 2) return;
 
-        if (Rooms[0])
-        {
-            transform.name = string.Format("{0} [{1}]", Rooms[0].transform.name, OpeningDirection.ToString());
-            SoundSource = Rooms[0].GetComponent<OneShotPlayer>();
-        }
+        // if (!Application.isEditor) return;
+        // if (Rooms.Count < 2) return;
+        //
+        // if (Rooms[0])
+        // {
+        //     transform.name = string.Format("{0} [{1}]", Rooms[0].transform.name, OpeningDirection.ToString());
+        //     SoundSource = Rooms[0].GetComponent<OneShotPlayer>();
+        // }
+        //
+        // float adjustedAngle = Open ? BaseRotation + OpenAngle : BaseRotation;
+        // switch (OpeningDirection)
+        // {
+        //     case Direction.East:
+        //         _doorLocalBaseRotation = 90f;
+        //         BaseRotation = -270f;
+        //         LocationOffset = new Vector3(-1, 30, 4);
+        //         break;
+        //     case Direction.West:
+        //         _doorLocalBaseRotation = 270f;
+        //         BaseRotation = -90f;
+        //         LocationOffset = new Vector3(1, 30, -4);
+        //         break;
+        //     case Direction.South:
+        //         _doorLocalBaseRotation = 180f;
+        //         BaseRotation = -180f;
+        //         LocationOffset = new Vector3(4, 30, 1);
+        //         break;
+        //     case Direction.North:
+        //         _doorLocalBaseRotation = 0f;
+        //         LocationOffset = new Vector3(-4, 30, -1);
+        //         break;
+        // }
+        //
+        // DoorGameObject.transform.localRotation = Quaternion.Euler(0, _doorLocalBaseRotation, 0);
+        //
+        // if (DoorGameObject)
+        // {
+        //     DoorGameObject.transform.localRotation =
+        //         Open ? Quaternion.Euler(0, OpenAngle + _doorLocalBaseRotation, 0) : Quaternion.Euler(0, _doorLocalBaseRotation, 0);
+        // } 
+
+        
+    }
+
+
+    // Start is called before the first frame update
+    protected virtual void Start()
+    {
+        _collider = GetComponent<BoxCollider>();
+        _dialogueSystem = FindObjectOfType<DialogueSystem>();
 
         float adjustedAngle = Open ? BaseRotation + OpenAngle : BaseRotation;
         switch (OpeningDirection)
@@ -84,44 +128,37 @@ public class Door : MonoBehaviour
                 break;
         }
 
-        DoorGameObject.transform.localRotation = Quaternion.Euler(0, _doorLocalBaseRotation, 0);
+    }
 
+    // Update is called once per frame
+    protected virtual void Update()
+    {
+
+        DoorGameObject.transform.localRotation = Quaternion.Euler(0, _doorLocalBaseRotation, 0);
+        
         if (DoorGameObject)
         {
             DoorGameObject.transform.localRotation =
                 Open ? Quaternion.Euler(0, OpenAngle + _doorLocalBaseRotation, 0) : Quaternion.Euler(0, _doorLocalBaseRotation, 0);
         } 
 
-        
-    }
-
-
-    // Start is called before the first frame update
-    protected virtual void Start()
-    {
-        _collider = GetComponent<BoxCollider>();
-        _dialogueSystem = FindObjectOfType<DialogueSystem>();
-    }
-
-    // Update is called once per frame
-    protected virtual void Update()
-    {
-        if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled && !HideDoorModel);
-        if (_collider) _collider.enabled = DoorEnabled;
-        if (Rooms.Count < 2) return;
-        if (Rooms[0]) Rooms[0].SetDoor(OpeningDirection, DoorEnabled);
-        if (Rooms[1]) Rooms[1].SetDoor(GetOpposingDirection(), DoorEnabled);
-        if (Rooms[0] && Rooms[1] && DoorGameObject)
-        {
-            DoorGameObject.transform.position = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + LocationOffset;
-            if (!_collider) _collider = GetComponent<BoxCollider>();
-            if (!ColliderValuesOverride)
-            {
-                var rawColliderCenter = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + ColliderOffset;
-                _collider.center = Vector3MathExtension.Rotate3DPointAroundYAxis(rawColliderCenter, Mathf.Deg2Rad * transform.rotation.y);
-                _collider.size = Vector3MathExtension.Abs(Vector3MathExtension.Rotate3DPointAroundYAxis(ColliderSize, Mathf.Deg2Rad * BaseRotation));
-            }
-        }
+        // if (!Application.isEditor) return;
+        // if (DoorGameObject) DoorGameObject.SetActive(DoorEnabled && !HideDoorModel);
+        // if (_collider) _collider.enabled = DoorEnabled;
+        // if (Rooms.Count < 2) return;
+        // if (Rooms[0]) Rooms[0].SetDoor(OpeningDirection, DoorEnabled);
+        // if (Rooms[1]) Rooms[1].SetDoor(GetOpposingDirection(), DoorEnabled);
+        // if (Rooms[0] && Rooms[1] && DoorGameObject)
+        // {
+        //     DoorGameObject.transform.position = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + LocationOffset;
+        //     if (!_collider) _collider = GetComponent<BoxCollider>();
+        //     if (!ColliderValuesOverride)
+        //     {
+        //         var rawColliderCenter = (Rooms[0].transform.position + Rooms[1].transform.position) / 2f + ColliderOffset;
+        //         _collider.center = Vector3MathExtension.Rotate3DPointAroundYAxis(rawColliderCenter, Mathf.Deg2Rad * transform.rotation.y);
+        //         _collider.size = Vector3MathExtension.Abs(Vector3MathExtension.Rotate3DPointAroundYAxis(ColliderSize, Mathf.Deg2Rad * BaseRotation));
+        //     }
+        // }
     }
 
     public void SetDoorEnabled(bool hasDoor)

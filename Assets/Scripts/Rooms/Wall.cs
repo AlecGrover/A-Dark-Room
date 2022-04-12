@@ -63,6 +63,7 @@ public class Wall : MonoBehaviour
     void OnValidate()
     {
 
+        if (!Application.isEditor) return;
         gameObject.transform.localPosition = Vector3.zero;
 
         if (BlankWallGameObject)
@@ -82,6 +83,8 @@ public class Wall : MonoBehaviour
 
     void Update()
     {
+
+        if (!Application.isEditor) return;
         if (BlankWallGameObject) BlankWallGameObject.SetActive(!HasDoor);
         if (DoorWallGameObject) DoorWallGameObject.SetActive(HasDoor);
 

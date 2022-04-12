@@ -524,6 +524,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 3
       objectReference: {fileID: 0}
@@ -557,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 1221692991}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: EastWall.HasDoor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: WestWall.HasDoor
@@ -569,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: SouthWall.HasDoor
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1990621486520196057, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: HasDoor
@@ -763,7 +767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 74042577}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -1227,6 +1231,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 0
       objectReference: {fileID: 0}
@@ -1470,7 +1478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 154406675}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -1493,6 +1501,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -2803,6 +2815,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 0
       objectReference: {fileID: 0}
@@ -3034,7 +3050,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 328139247}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -3587,7 +3603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1705978433}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -3598,7 +3614,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1462898223}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -3617,6 +3633,10 @@ PrefabInstance:
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
@@ -3846,7 +3866,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 436091171}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -3925,6 +3945,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -4375,7 +4399,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1832444365}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -4802,7 +4826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1307109357}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -5082,7 +5106,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 958576356}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -5273,7 +5297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 770140568}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -5513,6 +5537,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: TriggerUpdate
       value: 0
       objectReference: {fileID: 0}
@@ -5538,7 +5566,7 @@ PrefabInstance:
       objectReference: {fileID: 1601266300}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: EastWall.HasDoor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: WestWall.HasDoor
@@ -5690,6 +5718,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -5848,7 +5880,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 776405298}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -5867,6 +5899,10 @@ PrefabInstance:
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
@@ -6100,7 +6136,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 787675450}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -6256,6 +6292,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomFloorType
       value: 0
       objectReference: {fileID: 0}
@@ -6281,7 +6321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: SouthWall.HasDoor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1990621486520196057, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: HasDoor
@@ -6402,6 +6442,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -6652,7 +6696,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 882522120}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -7089,6 +7133,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 1
       objectReference: {fileID: 0}
@@ -7102,7 +7150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: TriggerUpdate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomLocation.x
@@ -7300,7 +7348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 937323319}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -7453,6 +7501,10 @@ PrefabInstance:
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
@@ -8168,6 +8220,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 1
       objectReference: {fileID: 0}
@@ -8387,7 +8443,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1012352006}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -8398,7 +8454,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 165860654}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -8409,7 +8465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1748024315}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -8990,7 +9046,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 465526201}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -9884,7 +9940,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 848315482}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -9934,6 +9990,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -10165,7 +10225,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1683193251}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -10411,6 +10471,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomLocation.x
       value: 2
       objectReference: {fileID: 0}
@@ -10623,6 +10687,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -11209,6 +11277,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 0
       objectReference: {fileID: 0}
@@ -11684,6 +11756,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 2
       objectReference: {fileID: 0}
@@ -12101,6 +12177,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: EastWall.door
       value: 
       objectReference: {fileID: 2094402840}
@@ -12491,6 +12571,10 @@ PrefabInstance:
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
@@ -12931,6 +13015,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 3
       objectReference: {fileID: 0}
@@ -12940,7 +13028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: TriggerUpdate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: WestWall.door
@@ -12968,7 +13056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: NorthWall.HasDoor
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: SouthWall.HasDoor
@@ -13450,6 +13538,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomLocation.x
       value: 1
       objectReference: {fileID: 0}
@@ -13724,7 +13816,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 5068061219636059690}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -13793,6 +13885,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomWallType
       value: 3
       objectReference: {fileID: 0}
@@ -13802,7 +13898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: TriggerUpdate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: RoomLocation.x
@@ -14036,7 +14132,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2101964927}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -14064,6 +14160,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
@@ -14302,7 +14402,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 2109887522}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e1c2528a45eac840b43b357c1cca190, type: 3}
   m_Name: 
@@ -14631,6 +14731,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456184266987892127, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1901537942267586536, guid: 18eafca1da9183a429dba124283ed50f, type: 3}

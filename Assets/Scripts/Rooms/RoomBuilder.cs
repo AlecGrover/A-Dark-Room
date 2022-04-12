@@ -54,7 +54,7 @@ public class RoomBuilder : MonoBehaviour
     // Update is called once per frame
     void OnValidate()
     {
-
+        if (!Application.isEditor) return;
         NorthWall.SetHasDoor();
         SouthWall.SetHasDoor();
         EastWall.SetHasDoor();
