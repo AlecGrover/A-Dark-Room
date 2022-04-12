@@ -15,6 +15,10 @@ public class FollowMouse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Input.mousePosition;
+        if (!Camera.current) return;
+        var mouseLocation = Camera.current.ScreenToViewportPoint(Input.mousePosition);
+        var outOfFrame = Mathf.Min(mouseLocation.x, mouseLocation.y) < 0 ||
+                         Mathf.Max(mouseLocation.x, mouseLocation.y) > 1;
+        if (!outOfFrame) transform.position = Input.mousePosition;
     }
 }

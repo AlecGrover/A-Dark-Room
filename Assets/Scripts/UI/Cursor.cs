@@ -53,7 +53,7 @@ public class Cursor : MonoBehaviour
         else
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hitInteract, 38f,InteractableLayerMask))
+            if (Physics.Raycast(ray, out RaycastHit hitInteract, 44f,InteractableLayerMask))
             {
                 Door door = hitInteract.transform.gameObject.GetComponent<Door>();
                 if (door)

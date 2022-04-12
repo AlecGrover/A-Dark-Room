@@ -10,6 +10,7 @@ public class PlayerInteractSystem : MonoBehaviour
 
     public LayerMask InteractLayerMask = new LayerMask();
     private Player _player;
+    private DialogueSystem _dialogueSystem;
 
 
 
@@ -17,6 +18,7 @@ public class PlayerInteractSystem : MonoBehaviour
     void Start()
     {
         _player = GetComponent<Player>();
+        _dialogueSystem = FindObjectOfType<DialogueSystem>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class PlayerInteractSystem : MonoBehaviour
             // Debug.Log("Detected player interact attempt");
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            bool hitVolume = Physics.Raycast(ray, out hit, 42f, InteractLayerMask);
+            bool hitVolume = Physics.Raycast(ray, out hit, 45f, InteractLayerMask);
             if (hitVolume)
             {
                 // Debug.Log("Detected interactable object");
@@ -51,8 +53,15 @@ public class PlayerInteractSystem : MonoBehaviour
                     if (added)
                     {
                         item.gameObject.SetActive(false);
+                        if (_dialogueSystem) _dialogueSystem.TriggerDialogue("You picked up a " + item.InventoryName);
                     }
                 }
+
+                ObjectOfInterest objectOfInterest = hit.transform.gameObject.GetComponent<ObjectOfInterest>();
+                if (objectOfInterest) objectOfInterest.FlavorDialogue();
+
+                EscapePanelButton escapePanelButton = hit.transform.GetComponent<EscapePanelButton>();
+                if (escapePanelButton) escapePanelButton.Interact();
 
             }
         }

@@ -39,7 +39,15 @@ public class Door : MonoBehaviour
 
     [Header("Sound FX Parameters")]
     public AudioClip OpeningSound;
+    public AudioClip TriedLockedAudioClip;
+    private bool _lockedAudioPlaying = false;
     public OneShotPlayer SoundSource;
+
+    [Header("Dialogue System Parameters")]
+    private DialogueSystem _dialogueSystem;
+
+    public string LockedDoorText = "The door appears to be locked, perhaps there is a key?";
+    public string UnlockedDoorText = "The door swings open";
 
 
     void OnValidate()
@@ -89,9 +97,10 @@ public class Door : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         _collider = GetComponent<BoxCollider>();
+        _dialogueSystem = FindObjectOfType<DialogueSystem>();
     }
 
     // Update is called once per frame
@@ -150,11 +159,17 @@ public class Door : MonoBehaviour
             if (!Locked)
             {
                 Open = true;
+                if (_dialogueSystem) _dialogueSystem.TriggerDialogue(UnlockedDoorText);
                 if (SoundSource && OpeningSound) SoundSource.PlayOneShot(OpeningSound);
             }
             else
             {
                 if (DoorLock) DoorLock.TryUnlock();
+                if (Locked)
+                {
+                    StartCoroutine(PlayLockedAudio());
+                    if (_dialogueSystem) _dialogueSystem.TriggerDialogue(LockedDoorText);
+                }
             }
             if (DoorGameObject)
             {
@@ -188,6 +203,18 @@ public class Door : MonoBehaviour
     public virtual void Unlock()
     {
         Locked = false;
+    }
+
+    protected IEnumerator PlayLockedAudio()
+    {
+        if (_lockedAudioPlaying || !TriedLockedAudioClip || !SoundSource) yield return null;
+        else
+        {
+            _lockedAudioPlaying = true;
+            SoundSource.PlayOneShot(TriedLockedAudioClip);
+            yield return new WaitForSeconds(TriedLockedAudioClip.length);
+            _lockedAudioPlaying = false;
+        }
     }
 
 

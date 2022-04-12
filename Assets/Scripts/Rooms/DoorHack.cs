@@ -14,6 +14,11 @@ public class DoorHack : Door
         if (LockedGameObject) LockedGameObject.SetActive(Locked);
         if (UnlockedGameObject) UnlockedGameObject.SetActive(!Locked);
         if (!Locked) _collider.enabled = !DeactivateColliderOnUnlock;
+        if (!Locked && !Open)
+        {
+            if (SoundSource && OpeningSound) SoundSource.PlayOneShot(OpeningSound);
+            Open = true;
+        }
     }
 
     public override void Unlock()

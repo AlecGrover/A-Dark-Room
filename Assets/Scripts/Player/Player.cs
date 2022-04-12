@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     [Header("Player Location Parameters")]
     [SerializeField]
     private Vector3 _playerLocation = Vector3.zero;
+
+    public RoomBuilder GoalRoom;
     public RoomBuilder StartingRoom;
 
     [Header("Player Inventory")]
@@ -56,6 +58,9 @@ public class Player : MonoBehaviour
     public InventorySlot InventorySlot_4 = new InventorySlot(null, "4");
     [SerializeField]
     private List<InventorySlot> _inventorySlots = new List<InventorySlot>();
+
+    [Header("Game Control Parameters")]
+    private GameLevelRunner _levelRunner;
 
     void Awake()
     {
@@ -68,6 +73,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _levelRunner = FindObjectOfType<GameLevelRunner>();
         MoveToRoom(StartingRoom);
     }
 
@@ -81,6 +87,7 @@ public class Player : MonoBehaviour
     {
         _playerLocation = room.RoomLocation;
         transform.position = room.transform.position;
+        if (room != null && _levelRunner && room == GoalRoom) _levelRunner.InformOfGameWin();
     }
 
     public bool TryAddToInventory(Item newItem)

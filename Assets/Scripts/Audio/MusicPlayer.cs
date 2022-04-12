@@ -12,7 +12,6 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-        PlayMusic();
     }
 
     // Update is called once per frame
@@ -24,6 +23,11 @@ public class MusicPlayer : MonoBehaviour
     public void PlayMusic()
     {
         _audioSource.Play();
+    }
+
+    public void StopMusic()
+    {
+        _audioSource.Stop();
     }
 
 

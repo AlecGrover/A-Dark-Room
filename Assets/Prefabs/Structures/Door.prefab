@@ -64,6 +64,7 @@ MonoBehaviour:
   OpenAngle: 120
   DoorGameObject: {fileID: 520928853367142000}
   OpeningSound: {fileID: 8300000, guid: 425d40924606acc49a60a20a0727708e, type: 3}
+  TriedLockedAudioClip: {fileID: 8300000, guid: fba4f317e80d690439a57ec8495b1509, type: 3}
   SoundSource: {fileID: 0}
 --- !u!65 &4413037463952112755
 BoxCollider:

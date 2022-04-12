@@ -23,5 +23,11 @@ namespace Assets.Scripts.Math
             Vector3 outVector = new Vector3(Mathf.Abs(inVector.x), Mathf.Abs(inVector.y), Mathf.Abs(inVector.z));
             return outVector;
         }
+
+        public static Vector3 ConstantAddition(Vector3 vector, float constant)
+        {
+            Vector3 outVector = new Vector3(vector.x + constant, vector.y + constant, vector.z + constant);
+            return outVector;
+        }
     }
 }
